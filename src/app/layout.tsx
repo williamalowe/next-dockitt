@@ -22,9 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-zinc-200 text-zinc-900 min-h-screen`}>
         <Container>
           <Header />
-          <LinkContainer />
           {children}
-
         </Container>
       </body>
     </html>
