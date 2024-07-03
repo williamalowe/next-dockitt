@@ -34,7 +34,8 @@ export default function TaskTable() {
       </div>
       <div>
         {/* map task items */}
-        <TaskTableItem 
+        <p className="text-center">No Tasks Pending!</p>
+        {/* <TaskTableItem 
           id='1234567890'
           task='Do Stuff'
           priority='Low'
@@ -57,11 +58,11 @@ export default function TaskTable() {
           task='Do Even More Stuff'
           priority='Critical'
           status='Completed'
-        />
+        /> */}
       </div>
       <Link href="/new-task">
-        <div className="flex p-2 bg-emerald-600 rounded-b justify-center">
-          <FontAwesomeIcon icon={faPlus} className="w-auto h-4 text-white" />
+        <div className="flex bg-emerald-600 rounded-b justify-center p-1">
+          <FontAwesomeIcon icon={faPlus} className="w-4 h-4 text-white" />
         </div>
       </Link>
     </div>
