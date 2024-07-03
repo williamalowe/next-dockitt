@@ -1,12 +1,12 @@
 ## Ongoing Tasks
 [] - project scaffolding
-[] - home-page.tsx creation
-[] - home-layout.tsx creation
+[x] - home-page.tsx creation
+[x] - home-layout.tsx creation
 [] - login-page.tsx creation
 [] - kanban-page.tsx creation
 [] - dashboard-page.tsx creation
 [] - container-component.tsx creation
-[] - header-component.tsx creation
+[x] - header-component.tsx creation
 [] - footer-component.tsx creation
 [] - task-list-component.tsx creation
 [] - kanban-board-component.tsx creation
