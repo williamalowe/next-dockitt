@@ -1,6 +1,7 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import TaskTableItem from "./task-table-item";
 
 export default function TaskTable() {
   const tableLabels = [
@@ -31,7 +32,33 @@ export default function TaskTable() {
           );
         })}
       </div>
-      <div></div>
+      <div>
+        {/* map task items */}
+        <TaskTableItem 
+          id='1234567890'
+          task='Do Stuff'
+          priority='Low'
+          status='Backlog'
+        />
+        <TaskTableItem 
+          id='2345678901'
+          task='Do Other Stuff'
+          priority='Medium'
+          status='In Progress'
+        />
+        <TaskTableItem 
+          id='3456789012'
+          task='Do More Stuff'
+          priority='High'
+          status='Under Review'
+        />
+        <TaskTableItem 
+          id='4567890123'
+          task='Do Even More Stuff'
+          priority='Critical'
+          status='Completed'
+        />
+      </div>
       <Link href="/new-task">
         <div className="flex p-2 bg-emerald-600 rounded-b justify-center">
           <FontAwesomeIcon icon={faPlus} className="w-auto h-4 text-white" />

@@ -9,6 +9,7 @@
 [x] - header-component.tsx creation
 [] - footer-component.tsx creation
 [x] - task-table-component.tsx creation
+[x] - task-table-item-component.tsx creation
 [] - kanban-board-component.tsx creation
 [] - task-card-component.tsx creation
 [] - new-task-form-component.tsx creation
