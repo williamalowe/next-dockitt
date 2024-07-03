@@ -34,7 +34,7 @@ export default function LinkContainer() {
     },
   ];
   return (
-    <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+    <nav className="grid gap-4 grid-cols-2 lg:grid-cols-4">
       {navLinks.map((link) => (
         <LinkCard
           key={link.href}
@@ -44,6 +44,6 @@ export default function LinkContainer() {
           icon={link.icon}
         />
       ))}
-    </div>
+    </nav>
   );
 }
