@@ -3,7 +3,6 @@
 import Task from '@/models/Task'
 
 const addTask = async task => {
-	const id = task.get('id')
 	const title = task.get('title')
 	const tag = task.get('tag')
 	const description = task.get('description')
@@ -11,7 +10,7 @@ const addTask = async task => {
 	const status = task.get('status')
 	const points = task.get('points')
 
-	const newTask = new Task({ id, title, tag, description, priority, status, points })
+	const newTask = new Task({ title, tag, description, priority, status, points })
 	await newTask.save()
 }
 
