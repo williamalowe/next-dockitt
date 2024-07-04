@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, M_PLUS_1_Code } from "next/font/google";
 import "./globals.css";
 import Container from "@/components/container";
+import Header from "@/components/header";
 
 const font = M_PLUS_1_Code({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${font.className} bg-neutral-950`}>
         <Container>
+          <Header />
           {children}
         </Container>
       </body>
