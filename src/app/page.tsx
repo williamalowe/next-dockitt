@@ -1,8 +1,12 @@
+import TaskList from "@/components/task-list";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="pt-8 px-5 flex flex-col">
+      <h1 className="text-2xl font-bold">Welcome Back!</h1>
+      <p>You have x tasks pending.</p>
+      <TaskList />
     </main>
   );
 }

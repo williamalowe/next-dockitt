@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Ongoing Tasks
+- [ ] project scaffolding
+- [x] home-page.tsx creation
+- [x] home-layout.tsx creation
+- [ ] login-page.tsx creation
+- [x] kanban-page.tsx creation
+- [x] dashboard-page.tsx creation
+- [x] container-component.tsx creation
+- [x] header-component.tsx creation
+- [ ] footer-component.tsx creation
+- [x] task-table-component.tsx creation
+- [x] task-table-item-component.tsx creation
+- [ ] kanban-board-component.tsx creation
+- [ ] task-card-component.tsx creation
+- [ ] new-task-form-component.tsx creation
+- [ ] new-project-form-component.tsx creation
+- [ ] quick-stat-sidebar-component.tsx creation
+- [ ] mongodb integration
+- [ ] task FETCH/GET request functionality
+- [ ] task POST mutation functionality
+- [ ] task PATCH mutation functionality
+- [ ] task DELETE mutation functionality
+- [ ] project FETCH/GET request functionality
+- [ ] project POST mutation functionality
+- [ ] project PATCH mutation functionality
+- [ ] project DELETE mutation functionality
+- [ ] user authentication
+- [ ] lightmode/darkmode accessibility
 
-## Getting Started
+## Overview
+Welcome to the Refactored Dockitt project with Next.js! This repository contains a modernized and optimized version of the classic Dockitt application, designed for better performance, scalability, and maintainability.
 
-First, run the development server:
+## Features
+- [ ] User Authentication: Secure sign-up and login functionalities.
+- [ ] Drag-and-Drop Interface: Intuitive drag-and-drop support for tasks across columns.
+- [ ] Real-time Updates: Instant updates using WebSockets for a seamless user experience.
+- [ ] Responsive Design: Fully responsive UI for both desktop and mobile devices.
+- [ ] Customizable Boards: Create, edit, and delete boards, lists, and tasks.
+- [ ] Notifications: Stay updated with task reminders and notifications.
+- [ ] Activity Logs: Track changes and activities on the board.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
+Frontend: React, Next.js 14, TailwindCSS, Framer-Motion
+<!-- Backend: Node.js, Express, MongoDB  -->
+<!-- Authentication: JWT, bcrypt -->
+<!-- Testing: Jest, React Testing Library -->
+<!-- Deployment: Docker, Kubernetes, CI/CD with GitHub Actions -->
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
+Clone the repository:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contact
+For any questions or suggestions, feel free to open an issue or reach out to the maintainer at williamlowedev@gmail.com.

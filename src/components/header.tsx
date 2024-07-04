@@ -19,7 +19,7 @@ export default function Header() {
   ];
   const pathname = usePathname();
   return (
-    <header className="flex items-center p-4">
+    <header className="flex items-center p-4 border-b-2">
       <Link href="/">
         <div className="border-2 w-fit p-2 rounded text-xl font-bold tracking-wide">
           dockitt.
