@@ -13,6 +13,7 @@ export default async function Home() {
       <h1 className="text-2xl font-bold">Welcome Back!</h1>
       <p>You have x tasks pending.</p>
       <TaskList 
+        tasks={tasks}
       />
     </main>
   );

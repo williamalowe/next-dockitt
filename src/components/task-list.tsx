@@ -1,7 +1,7 @@
 import Link from "next/link";
 import TaskListItem from "./task-list-item";
 
-export default function TaskList() {
+export default function TaskList({ tasks }) {
   const headerLabels = ["ID", "TASK", "PRIORITY", "STATUS", ""];
   return (
     <div className="flex flex-col mt-4">
@@ -14,9 +14,18 @@ export default function TaskList() {
       </div>
       <div className="mt-2 border-2">
         {
-          // Map DB Tasks
+          tasks.map((task) => 
+              <TaskListItem
+                key={task._id}
+                id={task._id.toString().slice(0,8)}
+                tag={task.tag}
+                task={task.title}
+                priority={task.priority}
+                status={task.status}
+              />
+          )
         }
-        <TaskListItem
+        {/* <TaskListItem
           id="123456789"
           tag="fix"
           task="Do some stuff"
@@ -50,7 +59,7 @@ export default function TaskList() {
           task="Do extra stuff"
           priority="low"
           status="cancelled"
-        />
+        /> */}
       </div>
       <div className="flex justify-center mt-2 border-2 rounded-b-md font-bold">
         <Link href="new-task">Add New Task</Link>

@@ -24,7 +24,7 @@ export default function TaskListItem({
   return (
     <div className="flex capitalize px-2">
       <div className="flex-1 flex items-center gap-x-2">
-        {id}{" "}
+        {id}
         <span className="bg-white text-neutral-900 text-xs px-1 rounded-md">
           {tag}
         </span>
@@ -39,25 +39,40 @@ export default function TaskListItem({
               <FontAwesomeIcon icon={faX} className="w-4 h-4 text-red-600" />
             </button>
             <button>
-              <FontAwesomeIcon icon={faCaretRight} className="w-4 h-4 text-green-600" />
+              <FontAwesomeIcon
+                icon={faCaretRight}
+                className="w-4 h-4 text-green-600"
+              />
             </button>
           </>
         ) : status === "completed" ? (
           <>
             <button>
-              <FontAwesomeIcon icon={faCaretLeft} className="w-4 h-4 text-orange-600" />
+              <FontAwesomeIcon
+                icon={faCaretLeft}
+                className="w-4 h-4 text-orange-600"
+              />
             </button>
             <button>
-              <FontAwesomeIcon icon={faCheck} className="w-4 h-4 text-green-600" />
+              <FontAwesomeIcon
+                icon={faCheck}
+                className="w-4 h-4 text-green-600"
+              />
             </button>
           </>
         ) : status === "cancelled" ? (
           <>
             <button>
-              <FontAwesomeIcon icon={faRotateRight} className="w-4 h-4 text-blue-600" />
+              <FontAwesomeIcon
+                icon={faTrash}
+                className="w-4 h-4 text-red-600"
+              />
             </button>
             <button>
-              <FontAwesomeIcon icon={faTrash} className="w-4 h-4 text-red-600" />
+              <FontAwesomeIcon
+                icon={faRotateRight}
+                className="w-4 h-4 text-blue-600"
+              />
             </button>
           </>
         ) : (
@@ -66,10 +81,16 @@ export default function TaskListItem({
               <FontAwesomeIcon icon={faX} className="w-4 h-4 text-red-600" />
             </button>
             <button>
-              <FontAwesomeIcon icon={faCaretLeft} className="w-4 h-4 text-orange-600" />
+              <FontAwesomeIcon
+                icon={faCaretLeft}
+                className="w-4 h-4 text-orange-600"
+              />
             </button>
             <button>
-              <FontAwesomeIcon icon={faCaretRight} className="w-4 h-4 text-green-600" />
+              <FontAwesomeIcon
+                icon={faCaretRight}
+                className="w-4 h-4 text-green-600"
+              />
             </button>
           </>
         )}
