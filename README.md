@@ -16,7 +16,7 @@
 - [ ] new-project-form-component.tsx creation
 - [ ] quick-stat-sidebar-component.tsx creation
 - [ ] mongodb integration
-- [ ] task FETCH/GET request functionality
+- [x] task FETCH/GET request functionality
 - [ ] task POST mutation functionality
 - [ ] task PATCH mutation functionality
 - [ ] task DELETE mutation functionality
