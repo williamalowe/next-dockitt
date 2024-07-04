@@ -3,8 +3,8 @@
 - [x] home-page.tsx creation
 - [x] home-layout.tsx creation
 - [ ] login-page.tsx creation
-- [x] kanban-page.tsx creation
-- [x] dashboard-page.tsx creation
+- [] kanban-page.tsx creation
+- [] dashboard-page.tsx creation
 - [x] container-component.tsx creation
 - [x] header-component.tsx creation
 - [ ] footer-component.tsx creation
