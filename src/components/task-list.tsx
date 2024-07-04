@@ -1,3 +1,4 @@
+import Link from "next/link"
 import TaskListItem from "./task-list-item"
 
 export default function TaskList() {
@@ -11,7 +12,7 @@ export default function TaskList() {
           )
         }
       </div>
-      <div className="mt-2 border-2 rounded-b-md">
+      <div className="mt-2 border-2">
         {
           // Map DB Tasks
         }
@@ -50,6 +51,9 @@ export default function TaskList() {
           priority="low"
           status="cancelled"
         />
+      </div>
+      <div className="flex justify-center mt-2 border-2 rounded-b-md font-bold">
+        <Link href="new-task">Add New Task</Link>
       </div>
     </div>
   )
