@@ -1,0 +1,22 @@
+'use server'
+
+import Task from '@/models/Task'
+
+const addTask = async task => {
+	const id = task.get('id')
+	const title = task.get('title')
+	const tag = task.get('tag')
+	const description = task.get('description')
+	const priority = task.get('priority')
+	const status = task.get('status')
+	const points = task.get('points')
+
+	const newTask = new Task({ id, title, tag, description, priority, status, points })
+	await newTask.save()
+}
+
+const getTasks = async () => {
+	return Task.find()
+}
+
+export { addTask, getTasks }
