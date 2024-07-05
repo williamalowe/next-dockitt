@@ -1,13 +1,23 @@
+"use client"
 import Link from "next/link";
 import TaskListItem from "./task-list-item";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function TaskList({ tasks }: {
   tasks: any
 }) {
+  const [data, setData] = useState([]);
   const headerLabels = ["ID", "TASK", "PRIORITY", "STATUS", ""];
+
+  useEffect(() => {
+    fetch('/api/task-data')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+      })
+  }, [data])
 
   return (
     <div className="flex flex-col mt-4">
@@ -19,7 +29,7 @@ export default function TaskList({ tasks }: {
         ))}
       </div>
       <div className="mt-2 border-2">
-        {tasks.map((task: any) => (
+        {data.map((task: any) => (
           <TaskListItem
             key={task._id}
             id={task._id}

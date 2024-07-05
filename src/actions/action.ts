@@ -22,7 +22,7 @@ const getTasks = async () => {
 const changeStatus = async (id: string, status: string) => {
 	let target = { _id: id };
 	let update = { status: status}
-	await Task.findOneAndUpdate(target, update)
+	await Task.findOneAndUpdate(target, update);
 }
 
 export { addTask, getTasks, changeStatus }

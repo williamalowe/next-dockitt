@@ -1,3 +1,4 @@
+"use client"
 import KanbanColumn from "./kanban-column";
 
 export default function KanbanBoard({ tasks }: {
