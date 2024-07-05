@@ -6,7 +6,7 @@ export default async function NewTask() {
   await dbConnect();
   
   return (
-    <main className="pt-8 px-5 flex flex-col">
+    <main className="pt-8 px-5 flex flex-col items-center">
       <h1 className="text-2xl font-bold">Add New Card</h1>
       <NewTaskForm 
         handleSubmit={addTask}
