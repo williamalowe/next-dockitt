@@ -1,4 +1,5 @@
 'use server'
+import { redirect } from 'next/navigation'
 
 import Task from '@/models/Task'
 
@@ -11,7 +12,8 @@ const addTask = async task => {
 	const points = task.get('points')
 
 	const newTask = new Task({ title, tag, description, priority, status, points })
-	await newTask.save()
+	await newTask.save();
+	redirect('/kanban');
 }
 
 const getTasks = async () => {
