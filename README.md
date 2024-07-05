@@ -10,12 +10,12 @@
 - [ ] footer-component.tsx creation
 - [x] task-table-component.tsx creation
 - [x] task-table-item-component.tsx creation
-- [ ] kanban-board-component.tsx creation
+- [x] kanban-board-component.tsx creation
 - [ ] task-card-component.tsx creation
 - [ ] new-task-form-component.tsx creation
 - [ ] new-project-form-component.tsx creation
 - [ ] quick-stat-sidebar-component.tsx creation
-- [ ] mongodb integration
+- [x] mongodb integration
 - [x] task FETCH/GET request functionality
 - [ ] task POST mutation functionality
 - [ ] task PATCH mutation functionality
