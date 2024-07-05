@@ -6,7 +6,6 @@ import Image from "next/image";
 export default async function Home() {
   await dbConnect();
   const tasks = await getTasks();
-  console.log(tasks);
 
   return (
     <main className="pt-8 px-5 flex flex-col">
