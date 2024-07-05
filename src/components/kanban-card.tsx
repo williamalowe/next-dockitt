@@ -36,10 +36,10 @@ export default function KanbanCard({
         </span>
       </h5>
       <PatchButtonContainer status={status} />
-      <div className="absolute top-0 right-0 px-2 bg-neutral-950 border-l-2 border-b-2 border-neutral-600 rounded-b">
+      <div className="absolute top-0 right-0 px-2 bg-neutral-950 border-l-2 border-b-2 border-neutral-600 rounded-b text-xs font-bold">
         {tag}
       </div>
-      <div className="absolute bottom-1 left-1 w-4 h-4 p-2 border-2 border-neutral-600 flex items-center justify-center rounded bg-white text-neutral-800 font-bold text-xs">
+      <div className="absolute bottom-1 left-1 w-4 h-4 p-2 border-2 border-neutral-600 flex items-center justify-center rounded bg-neutral-950 text-neutral-400 font-bold text-xs">
         {points}
       </div>
     </div>
