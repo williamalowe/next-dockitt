@@ -1,4 +1,7 @@
+import Link from "next/link";
 import KanbanCard from "./kanban-card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export default function KanbanColumn({
   header,
@@ -15,7 +18,7 @@ export default function KanbanColumn({
         <h3 className={`${headerColor} text-xl uppercase`}>{header}</h3>
         <h3 className="ml-auto">1</h3>
       </div>
-      <div className="flex flex-col py-2 gap-y-4">
+      <div className="flex flex-col py-2 gap-y-2">
         {taskList.map((task: any) => (
           <KanbanCard
             key={task._id}
@@ -28,6 +31,12 @@ export default function KanbanColumn({
             points={task.points}
           />
         ))}
+        <Link href={'/new-task'}>
+          <div className="flex gap-x-2 p-2 text-xs text-neutral-400 font-semibold">
+            <p>Add Card</p>
+            <FontAwesomeIcon icon={faPlus} className="w-2"/>
+          </div>
+        </Link>
       </div>
     </div>
   );
