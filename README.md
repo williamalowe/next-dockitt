@@ -12,7 +12,7 @@
 - [x] task-table-item-component.tsx creation
 - [x] kanban-board-component.tsx creation
 - [x] task-card-component.tsx creation
-- [ ] new-task-form-component.tsx creation
+- [x] new-task-form-component.tsx creation
 - [ ] new-project-form-component.tsx creation
 - [ ] quick-stat-sidebar-component.tsx creation
 - [x] mongodb integration
