@@ -1,6 +1,5 @@
 'use server'
 import { redirect } from 'next/navigation'
-
 import Task from '@/models/Task'
 
 const addTask = async task => {

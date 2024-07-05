@@ -1,7 +1,11 @@
 import Link from "next/link";
 import TaskListItem from "./task-list-item";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-export default function TaskList({ tasks }) {
+export default function TaskList({ tasks }: {
+  tasks: any
+}) {
   const headerLabels = ["ID", "TASK", "PRIORITY", "STATUS", ""];
   return (
     <div className="flex flex-col mt-4">
@@ -13,57 +17,24 @@ export default function TaskList({ tasks }) {
         ))}
       </div>
       <div className="mt-2 border-2">
-        {
-          tasks.map((task) => 
-              <TaskListItem
-                key={task._id}
-                id={task._id.toString().slice(0,8)}
-                tag={task.tag}
-                task={task.title}
-                priority={task.priority}
-                status={task.status}
-              />
-          )
-        }
-        {/* <TaskListItem
-          id="123456789"
-          tag="fix"
-          task="Do some stuff"
-          priority="low"
-          status="backlog"
-        />
-        <TaskListItem
-          id="234567891"
-          tag="bug"
-          task="Do other stuff"
-          priority="low"
-          status="in progress"
-        />
-        <TaskListItem
-          id="345678912"
-          tag="fix"
-          task="Do more stuff"
-          priority="high"
-          status="under review"
-        />
-        <TaskListItem
-          id="456789123"
-          tag="feat"
-          task="Do even more stuff"
-          priority="low"
-          status="completed"
-        />
-        <TaskListItem
-          id="567891234"
-          tag="fix"
-          task="Do extra stuff"
-          priority="low"
-          status="cancelled"
-        /> */}
+        {tasks.map((task: any) => (
+          <TaskListItem
+            key={task._id}
+            id={task._id.toString().slice(0, 8)}
+            tag={task.tag}
+            task={task.title}
+            priority={task.priority}
+            status={task.status}
+          />
+        ))}
       </div>
-      <div className="flex justify-center mt-2 border-2 rounded-b-md font-bold">
-        <Link href="new-task">Add New Task</Link>
-      </div>
+
+      <Link href={"/new-task"}>
+        <div className="flex gap-x-2 p-2 text-sm text-neutral-400 font-semibold justify-center items-center">
+          <p>Add New Task</p>
+          <FontAwesomeIcon icon={faPlus} className="w-2" />
+        </div>
+      </Link>
     </div>
   );
 }
