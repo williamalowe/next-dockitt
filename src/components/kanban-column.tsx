@@ -16,7 +16,7 @@ export default function KanbanColumn({
     <div className="flex-1 px-2">
       <div className="flex">
         <h3 className={`${headerColor} text-xl uppercase`}>{header}</h3>
-        <h3 className="ml-auto">1</h3>
+        <h3 className="ml-auto">{taskList.length}</h3>
       </div>
       <div className="flex flex-col py-2 gap-y-2">
         {taskList.map((task: any) => (
