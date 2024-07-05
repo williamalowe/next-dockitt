@@ -1,8 +1,9 @@
+import KanbanBoard from "@/components/kanban-board";
+
 export default function Kanban() {
   return (
-    <main className="pt-8 px-5 flex flex-col">
-      <h1 className="text-2xl font-bold">Kanban Board</h1>
-      
+    <main className="flex-1 py-8 px-5 flex flex-col">
+      <KanbanBoard />
     </main>
   )
 }
