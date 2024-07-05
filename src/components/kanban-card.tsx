@@ -1,3 +1,5 @@
+import PatchButtonContainer from "./patch-button-container";
+
 export default function KanbanCard({
   id,
   title,
@@ -33,11 +35,7 @@ export default function KanbanCard({
           {priority}
         </span>
       </h5>
-      <div className="flex gap-x-2">
-        <button className="ml-auto">A</button>
-        <button>B</button>
-        <button>C</button>
-      </div>
+      <PatchButtonContainer status={status} />
       <div className="absolute top-0 right-0 px-2 bg-neutral-950 border-l-2 border-b-2 border-neutral-600 rounded-b">
         {tag}
       </div>

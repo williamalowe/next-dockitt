@@ -16,7 +16,7 @@ export default function KanbanColumn({
         <h3 className="ml-auto">1</h3>
       </div>
       <div className="flex flex-col py-2 gap-y-4">
-        {taskList.map((task) => (
+        {taskList.map((task: any) => (
           <KanbanCard
             key={task._id}
             id={task._id.toString().slice(0, 8)}
