@@ -22,7 +22,7 @@ export default function KanbanColumn({
         {taskList.map((task: any) => (
           <KanbanCard
             key={task._id}
-            id={task._id.toString().slice(0, 8)}
+            id={task._id}
             title={task.title}
             tag={task.tag}
             description={task.description}

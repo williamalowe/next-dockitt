@@ -16,7 +16,7 @@ export default function TaskListItem({
   return (
     <div className="flex capitalize px-2">
       <div className="flex-1 flex items-center gap-x-2">
-        {id}
+        {id.toString().slice(0, 8)}
         <span className="bg-white text-neutral-900 text-xs px-1 rounded-md">
           {tag}
         </span>
@@ -44,7 +44,10 @@ export default function TaskListItem({
       >
         {status}
       </div>
-      <PatchButtonContainer status={status} />
+      <PatchButtonContainer 
+        status={status}
+        id={id}
+      />
     </div>
   );
 }

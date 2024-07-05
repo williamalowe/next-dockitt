@@ -22,7 +22,7 @@ export default function KanbanCard({
       <h5 className="font-bold">{title}</h5>
       <h5 className="text-sm">
         <span className="font-bold">ID: </span>
-        {id}
+        {id.toString().slice(0, 8)}
       </h5>
       <p className="text-sm overflow-scroll no-scrollbar">{description}</p>
       <h5>
@@ -35,7 +35,7 @@ export default function KanbanCard({
           {priority}
         </span>
       </h5>
-      <PatchButtonContainer status={status} />
+      <PatchButtonContainer status={status} id={id} />
       <div className="absolute top-0 right-0 px-2 bg-neutral-950 border-l-2 border-b-2 border-neutral-600 rounded-b text-xs font-bold">
         {tag}
       </div>
