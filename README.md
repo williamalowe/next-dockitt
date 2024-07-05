@@ -17,8 +17,8 @@
 - [ ] quick-stat-sidebar-component.tsx creation
 - [x] mongodb integration
 - [x] task FETCH/GET request functionality
-- [ ] task POST mutation functionality
-- [ ] task PATCH mutation functionality
+- [x] task POST mutation functionality
+- [x] task PATCH mutation functionality
 - [ ] task DELETE mutation functionality
 - [ ] project FETCH/GET request functionality
 - [ ] project POST mutation functionality
