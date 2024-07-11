@@ -6,16 +6,13 @@ import { useTask } from '@/context/task-context';
 
 export default function KanbanBoard() {
   const [showCancelled, setShowCancelled] = useState(false);
-  const { tasks } = useTask();
-
-  console.log(tasks);
 
   return (
     <div className='flex gap-x-2'>
       <button className='absolute top-4 right-4 p-2 bg-zinc-900 border rounded text-zinc-50 uppercase text-xs hover:scale-105 active:scale-95 transition' onClick={() => setShowCancelled(!showCancelled)}>
         {
           showCancelled ? "Hide Cancelled Tasks" : "Show Cancelled Tasks"
-        }
+        } 
       </button>
       <KanbanColumn 
         header="Backlog"
