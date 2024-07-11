@@ -4,9 +4,7 @@ import {
   BsGrid,
   BsKanban,
   BsListCheck,
-  BsMenuApp,
-  BsMenuButton,
-  BsMenuDown,
+  BsPlus,
 } from "react-icons/bs";
 import { exampleTasks } from "@/lib/testData";
 
@@ -27,6 +25,11 @@ export default function Sidebar() {
       title: "Dashboard",
       icon: <BsGraphDown />,
     },
+    {
+      href: "/new-task",
+      title: "Add Task",
+      icon: <BsPlus />,
+    },
   ];
   const taskLists = [
     {
@@ -41,28 +44,30 @@ export default function Sidebar() {
       title: "In Progress",
       color: "bg-orange-800",
       textColor: "text-orange-800",
-      count: exampleTasks.filter((task) => task.status === "in progress").length
+      count: exampleTasks.filter((task) => task.status === "in progress")
+        .length,
     },
     {
       href: "/under-review",
       title: "Under Review",
       color: "bg-purple-800",
       textColor: "text-purple-800",
-      count: exampleTasks.filter((task) => task.status === "under review").length
+      count: exampleTasks.filter((task) => task.status === "under review")
+        .length,
     },
     {
       href: "/completed",
       title: "Completed",
       color: "bg-green-800",
       textColor: "text-green-800",
-      count: exampleTasks.filter((task) => task.status === "completed").length
+      count: exampleTasks.filter((task) => task.status === "completed").length,
     },
     {
       href: "/cancelled",
       title: "Cancelled",
       color: "bg-red-800",
       textColor: "text-red-800",
-      count: exampleTasks.filter((task) => task.status === "cancelled").length
+      count: exampleTasks.filter((task) => task.status === "cancelled").length,
     },
   ];
   return (
