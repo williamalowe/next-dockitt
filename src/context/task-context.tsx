@@ -24,12 +24,23 @@ const TaskContext = createContext<TaskContextType | null>(null);
 export default function TaskContextProvider({
   children,
 }: TaskContextProviderProps) {
-  const [tasks, setTasks] = useState(() => {
-    return JSON.parse(localStorage.getItem("tasks")) || "";
-  });
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
+  // const [tasks, setTasks] = useState(() => {
+  //   return JSON.parse(window.localStorage.getItem("tasks") as any) || [];
+  // });
+  const [tasks, setTasks] = useState([
+    {
+      id: "100",
+      task: "Test Task 1",
+      tag: "test",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus architecto voluptas ipsam doloremque non qui quod consequuntur nulla explicabo accusantium?",
+      priority: "low",
+      status: "backlog",
+    },
+  ]);
+
+  // useEffect(() => {
+  //   localStorage.setItem("tasks", JSON.stringify(tasks));
+  // }, [tasks]);
 
   return (
     <TaskContext.Provider value={{ tasks }}>

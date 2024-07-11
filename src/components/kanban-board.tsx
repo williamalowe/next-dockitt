@@ -2,9 +2,13 @@
 import React, { useState } from 'react'
 import KanbanColumn from './kanban-column'
 import { exampleTasks } from '@/lib/testData'
+import { useTask } from '@/context/task-context';
 
 export default function KanbanBoard() {
   const [showCancelled, setShowCancelled] = useState(false);
+  const { tasks } = useTask();
+
+  console.log(tasks);
 
   return (
     <div className='flex gap-x-2'>
