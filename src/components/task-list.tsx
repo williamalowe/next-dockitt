@@ -4,15 +4,15 @@ import TaskUpdateButtons from "./task-update-btns";
 
 export default function TaskList() {
   return (
-    <div className="flex flex-col border w-full rounded-md p-2">
+    <div className="flex flex-col border border-zinc-900/20 w-full rounded-md p-2 gap-y-1 dark:border-zinc-50/20">
       <div className="flex">
         <div className="flex-1 uppercase font-bold">Task</div>
         <div className="flex-1 uppercase font-bold">Priority</div>
-        <div className="flex-1 uppercase font-bold">Status</div>
+        <div className="w-32 uppercase font-bold">Status</div>
         <div className="flex-1"></div>
       </div>
       {exampleTasks.map((task) => (
-        <div key={task.id} className="flex">
+        <div key={task.id} className="flex hover:bg-zinc-200 px-2 py-1 rounded-md dark:hover:bg-zinc-800 transition">
           <div className="flex-1 capitalize">{task.task}</div>
           <div className="flex-1 capitalize">{task.priority}</div>
           <div
@@ -26,7 +26,7 @@ export default function TaskList() {
                 : task.status === "completed"
                 ? "bg-green-800"
                 : "bg-red-800"
-            } flex-1 capitalize rounded-md`}
+            } w-32 capitalize text-center text-zinc-50 italic`}
           >
             {task.status}
           </div>
