@@ -1,10 +1,18 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import KanbanColumn from './kanban-column'
 import { exampleTasks } from '@/lib/testData'
 
 export default function KanbanBoard() {
+  const [showCancelled, setShowCancelled] = useState(false);
+
   return (
     <div className='flex gap-x-2'>
+      <button className='absolute top-4 right-4 p-2 bg-zinc-900 border rounded text-zinc-50 uppercase text-xs hover:scale-105 active:scale-95 transition' onClick={() => setShowCancelled(!showCancelled)}>
+        {
+          showCancelled ? "Hide Cancelled Tasks" : "Show Cancelled Tasks"
+        }
+      </button>
       <KanbanColumn 
         header="Backlog"
         textColor="text-rose-800"
@@ -29,6 +37,15 @@ export default function KanbanBoard() {
         cardColor="bg-green-800"
         taskList={exampleTasks.filter((task) => task.status === "completed")}
       />
+      {
+        showCancelled && 
+        <KanbanColumn 
+          header="Cancelled"
+          textColor="text-red-800"
+          cardColor="bg-red-800"
+          taskList={exampleTasks.filter((task) => task.status === "cancelled")}
+        />
+      }
     </div>
   )
 }
