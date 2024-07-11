@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import ThemeContextProvider from "@/context/theme-context";
 import ThemeSwitch from "@/components/theme-switch";
+import Sidebar from "@/components/sidebar";
 
 const font = Montserrat({ subsets: ["latin"] });
 
@@ -18,8 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.className} h-screen bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-50`}>
+      <body className={`${font.className} h-screen bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-50 flex`}>
         <ThemeContextProvider>
+          <Sidebar />
           {children}
           <ThemeSwitch />
         </ThemeContextProvider>
