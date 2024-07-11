@@ -33,7 +33,7 @@ export default function Status({
       <TaskList tasks={displayTasks} />
       <Link
         href="/new-task"
-        className="flex items-center justify-center bg-zinc-900 text-zinc-50/80 p-1 text-xl rounded-md dark:bg-zinc-50 dark:text-zinc-900/80 hover:scale-[1.025] transition"
+        className="flex items-center justify-center bg-zinc-900 text-zinc-50/80 p-1 text-xl rounded-md dark:bg-zinc-200 dark:text-zinc-900/80 hover:scale-[1.025] transition"
       >
         <BsPlus />
       </Link>
