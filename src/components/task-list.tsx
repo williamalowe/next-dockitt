@@ -27,7 +27,7 @@ export default function TaskList({ tasks }: {
                 : task.status === "completed"
                 ? "bg-green-800"
                 : "bg-red-800"
-            } w-32 capitalize text-center text-zinc-50 italic`}
+            } w-32 capitalize text-center text-zinc-50 italic rounded-md`}
           >
             {task.status}
           </div>
