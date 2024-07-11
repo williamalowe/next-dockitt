@@ -1,8 +1,9 @@
-import { exampleTasks } from "@/lib/testData";
 import { BsCaretLeft, BsCaretRight, BsX } from "react-icons/bs";
 import TaskUpdateButtons from "./task-update-btns";
 
-export default function TaskList() {
+export default function TaskList({ tasks }: {
+  tasks: any
+}) {
   return (
     <div className="flex flex-col border border-zinc-900/20 w-full rounded-md p-2 gap-y-1 dark:border-zinc-50/20">
       <div className="flex">
@@ -11,7 +12,7 @@ export default function TaskList() {
         <div className="w-32 uppercase font-bold">Status</div>
         <div className="flex-1"></div>
       </div>
-      {exampleTasks.map((task) => (
+      {tasks.map((task) => (
         <div key={task.id} className="flex hover:bg-zinc-200 px-2 py-1 rounded-md dark:hover:bg-zinc-800 transition">
           <div className="flex-1 capitalize">{task.task}</div>
           <div className="flex-1 capitalize">{task.priority}</div>
