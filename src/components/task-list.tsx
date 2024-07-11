@@ -1,5 +1,6 @@
 import { exampleTasks } from "@/lib/testData";
 import { BsCaretLeft, BsCaretRight, BsX } from "react-icons/bs";
+import TaskUpdateButtons from "./task-update-btns";
 
 export default function TaskList() {
   return (
@@ -29,17 +30,9 @@ export default function TaskList() {
           >
             {task.status}
           </div>
-          <div className="flex-1 flex justify-end">
-            <button>
-              <BsX />
-            </button>
-            <button>
-              <BsCaretLeft />
-            </button>
-            <button>
-              <BsCaretRight />
-            </button>
-          </div>
+          <TaskUpdateButtons 
+            status={task.status}
+          />
         </div>
       ))}
     </div>
