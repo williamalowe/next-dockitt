@@ -4,7 +4,7 @@ export default function TaskUpdateButtons({ status }: {
   status : string,
 }) {
   return (
-    <div className="flex-1 flex justify-end">
+    <div className="flex-1 flex justify-end gap-x-2">
       {
         status == "backlog" ?
         <>
