@@ -37,6 +37,10 @@ export default function TaskList({ tasks }: {
           />
         </div>
       ))}
+      {
+        tasks.length === 0 &&
+        <p className="text-center font-bold">No Tasks Remaining!</p>
+      }
     </div>
   );
 }
