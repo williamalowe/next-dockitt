@@ -10,8 +10,18 @@ export default function NewTaskForm() {
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("low");
   const [status, setStatus] = useState("backlog");
+  const [invalidPost, setInvalidPost] = useState(false);
 
   const { addTask } = useTask();
+  const resetFields = () => {
+    setTask("");
+    setTag("");
+    setDescription("");
+    setPriority("");
+    setPriority("");
+    setStatus("");
+    setInvalidPost(false);
+  }
 
   const handleSubmit = () => {
     const newTask = {
@@ -22,7 +32,12 @@ export default function NewTaskForm() {
       priority: priority,
       status: status,
     };
-    addTask(newTask);
+    if (task.trim() === "") {
+      setInvalidPost(true);
+    } else {
+      addTask(newTask);
+      resetFields();
+    }
   };
 
   return (
@@ -36,13 +51,14 @@ export default function NewTaskForm() {
         onChange={(e) => setTask(e.target.value)}
         placeholder="Task Title"
         id="task"
+        required
         className="border rounded-md px-1 dark:bg-zinc-800"
       />
       <input
         type="text"
         value={tag}
         onChange={(e) => setTag(e.target.value)}
-        placeholder="Task Tag"
+        placeholder="Task Tag (Optional)"
         id="tag"
         className="border rounded-md px-1 dark:bg-zinc-800"
       />
@@ -52,7 +68,7 @@ export default function NewTaskForm() {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         rows={6}
-        placeholder="Task Description"
+        placeholder="Task Description (Optional)"
         className="border rounded-md px-1 dark:bg-zinc-800"
       />
       <div>
@@ -89,6 +105,10 @@ export default function NewTaskForm() {
       >
         <BsPlus /> Add Task
       </button>
+      {
+        invalidPost &&
+        <p className="text-red-600">Oops! Something went wrong. Please ensure that task title is valid.</p>
+      }
     </form>
   );
 }
