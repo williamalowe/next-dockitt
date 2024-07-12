@@ -16,6 +16,7 @@ type TaskContextProviderProps = {
 
 type TaskContextType = {
   tasks: Task | any;
+  addTask: () => void;
   // toggleTheme: () => void;
 };
 
@@ -38,12 +39,14 @@ export default function TaskContextProvider({
     },
   ]);
 
+  const addTask = (newTask: Task) => setTasks([...tasks, newTask]);
+
   // useEffect(() => {
   //   localStorage.setItem("tasks", JSON.stringify(tasks));
   // }, [tasks]);
 
   return (
-    <TaskContext.Provider value={{ tasks }}>
+    <TaskContext.Provider value={{ tasks, addTask }}>
       {children}
     </TaskContext.Provider>
   );
