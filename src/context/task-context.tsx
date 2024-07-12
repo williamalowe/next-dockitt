@@ -51,8 +51,8 @@ export default function TaskContextProvider({
     let updatedList = tasks.filter((task) => task.id !== taskID);
 
     let updatedTask = {
-      date: target[0].id,
-      title: target[0].task,
+      id: target[0].id,
+      task: target[0].task,
       description: target[0].description,
       priority: target[0].priority,
       tag: target[0].tag,
