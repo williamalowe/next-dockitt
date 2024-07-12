@@ -38,7 +38,7 @@ export default function KanbanCard({
               {priority}
             </span>
           </h5>
-          <TaskUpdateButtons status={status} />
+          <TaskUpdateButtons status={status} id={id}/>
         </div>
         <div className="absolute top-0 right-0 text-xs uppercase px-2 rounded-bl-md bg-zinc-200 dark:bg-zinc-600">{tag}</div>
       </div>

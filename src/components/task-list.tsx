@@ -33,6 +33,7 @@ export default function TaskList({ tasks }: {
           </div>
           <TaskUpdateButtons 
             status={task.status}
+            id={task.id}
           />
         </div>
       ))}
