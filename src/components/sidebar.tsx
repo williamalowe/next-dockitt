@@ -129,6 +129,7 @@ export default function Sidebar() {
                   >
                     <Link
                       href={link.href}
+                      onClick={() => setHidden(true)}
                       className="flex items-center justify-between"
                     >
                       {link.icon} {link.title}
@@ -154,6 +155,7 @@ export default function Sidebar() {
                     <Link
                       href={link.href}
                       className="flex items-center gap-x-2"
+                      onClick={() => setHidden(true)}
                     >
                       <div className={`${link.color} h-4 w-4 rounded-md`}></div>{" "}
                       {link.title}{" "}
