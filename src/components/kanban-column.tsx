@@ -8,7 +8,7 @@ export default function KanbanColumn({ header, textColor, taskList, cardColor }:
 }) {
   return (
     <div className="flex-1">
-      <h5 className={`${textColor} uppercase italic text-xl`}>{header}</h5>
+      <h5 className={`${textColor} uppercase italic text-xl`}>{header} - {taskList.length}</h5>
       <div className="flex flex-col p-1 gap-y-2">
         {
           taskList.map((task) => 
