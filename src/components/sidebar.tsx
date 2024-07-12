@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import {
   BsGraphDown,
@@ -6,9 +7,10 @@ import {
   BsListCheck,
   BsPlus,
 } from "react-icons/bs";
-import { exampleTasks } from "@/lib/testData";
+import { useTask } from "@/context/task-context";
 
 export default function Sidebar() {
+  const { tasks } = useTask();
   const listLinks = [
     {
       href: "/",
@@ -37,14 +39,14 @@ export default function Sidebar() {
       title: "Backlog",
       color: "bg-rose-800",
       textColor: "text-rose-800",
-      count: exampleTasks.filter((task) => task.status === "backlog").length,
+      count: tasks.filter((task) => task.status === "backlog").length,
     },
     {
       href: "/in-progress",
       title: "In Progress",
       color: "bg-orange-800",
       textColor: "text-orange-800",
-      count: exampleTasks.filter((task) => task.status === "in progress")
+      count: tasks.filter((task) => task.status === "in progress")
         .length,
     },
     {
@@ -52,7 +54,7 @@ export default function Sidebar() {
       title: "Under Review",
       color: "bg-purple-800",
       textColor: "text-purple-800",
-      count: exampleTasks.filter((task) => task.status === "under review")
+      count: tasks.filter((task) => task.status === "under review")
         .length,
     },
     {
@@ -60,14 +62,14 @@ export default function Sidebar() {
       title: "Completed",
       color: "bg-green-800",
       textColor: "text-green-800",
-      count: exampleTasks.filter((task) => task.status === "completed").length,
+      count: tasks.filter((task) => task.status === "completed").length,
     },
     {
       href: "/cancelled",
       title: "Cancelled",
       color: "bg-red-800",
       textColor: "text-red-800",
-      count: exampleTasks.filter((task) => task.status === "cancelled").length,
+      count: tasks.filter((task) => task.status === "cancelled").length,
     },
   ];
   return (

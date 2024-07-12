@@ -1,8 +1,8 @@
+"use client"
 import TaskList from "@/components/task-list";
+import { useTask } from "@/context/task-context";
 import Link from "next/link";
-import { exampleTasks } from "@/lib/testData";
 import { BsPlus } from "react-icons/bs";
-import { useEffect } from "react";
 
 export default function Status({
   params,
@@ -11,15 +11,16 @@ export default function Status({
     status: string;
   };
 }) {
-  let displayTasks = exampleTasks.filter(
+  const { tasks } = useTask();
+  let displayTasks = tasks.filter(
     (task) => task.status === params.status
   );
 
   if (params.status === "in-progress") {
-    displayTasks = exampleTasks.filter((task) => task.status === "in progress");
+    displayTasks = tasks.filter((task) => task.status === "in progress");
   }
   if (params.status === "under-review") {
-    displayTasks = exampleTasks.filter(
+    displayTasks = tasks.filter(
       (task) => task.status === "under review"
     );
   }

@@ -1,10 +1,10 @@
 "use client"
-import React, { useState } from 'react'
+import { useState } from 'react'
 import KanbanColumn from './kanban-column'
-import { exampleTasks } from '@/lib/testData'
 import { useTask } from '@/context/task-context';
 
 export default function KanbanBoard() {
+  const { tasks } = useTask();
   const [showCancelled, setShowCancelled] = useState(false);
 
   return (
@@ -18,25 +18,25 @@ export default function KanbanBoard() {
         header="Backlog"
         textColor="text-rose-800"
         cardColor="bg-rose-800"
-        taskList={exampleTasks.filter((task) => task.status === "backlog")}
+        taskList={tasks.filter((task) => task.status === "backlog")}
       />
       <KanbanColumn 
         header="In Progress"
         textColor="text-orange-800"
         cardColor="bg-orange-800"
-        taskList={exampleTasks.filter((task) => task.status === "in progress")}
+        taskList={tasks.filter((task) => task.status === "in progress")}
       />
       <KanbanColumn 
         header="Under Review"
         textColor="text-purple-800"
         cardColor="bg-purple-800"
-        taskList={exampleTasks.filter((task) => task.status === "under review")}
+        taskList={tasks.filter((task) => task.status === "under review")}
       />
       <KanbanColumn 
         header="Completed"
         textColor="text-green-800"
         cardColor="bg-green-800"
-        taskList={exampleTasks.filter((task) => task.status === "completed")}
+        taskList={tasks.filter((task) => task.status === "completed")}
       />
       {
         showCancelled && 
@@ -44,7 +44,7 @@ export default function KanbanBoard() {
           header="Cancelled"
           textColor="text-red-800"
           cardColor="bg-red-800"
-          taskList={exampleTasks.filter((task) => task.status === "cancelled")}
+          taskList={tasks.filter((task) => task.status === "cancelled")}
         />
       }
     </div>
