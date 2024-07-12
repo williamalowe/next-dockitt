@@ -30,11 +30,11 @@ export default function TaskContextProvider({
   let value: any;
 
   if (typeof window !== "undefined") {
-    value = JSON.parse(localStorage.getItem("tasks") || []);
+    value = localStorage.getItem("tasks") || [];
   }
 
 
-  const [tasks, setTasks] = useState(value);
+  const [tasks, setTasks] = useState(JSON.parse(value));
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
