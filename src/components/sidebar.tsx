@@ -8,9 +8,11 @@ import {
   BsPlus,
 } from "react-icons/bs";
 import { useTask } from "@/context/task-context";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const { tasks } = useTask();
+  const pathname = usePathname();
   const listLinks = [
     {
       href: "/",
@@ -93,8 +95,8 @@ export default function Sidebar() {
           {listLinks.map((link) => (
             <li
               key={link.href}
-              className="px-2 py-1 opacity-80 text-sm rounded-md hover:bg-zinc-300 
-              dark:hover:bg-zinc-900 transition"
+              className={`${pathname === link.href ? "opacity-100 font-bold bg-zinc-300 dark:bg-zinc-900" : "opacity-80"} px-2 py-1 text-sm rounded-md hover:bg-zinc-300 
+              dark:hover:bg-zinc-900 transition`}
             >
               <Link
                 href={link.href}
@@ -112,8 +114,8 @@ export default function Sidebar() {
           {taskLists.map((link) => (
             <li
               key={link.href}
-              className="px-2 py-1 opacity-80 text-sm rounded-md hover:bg-zinc-300 dark:hover:bg-zinc-900 
-              transition"
+              className={`${pathname === link.href ? "opacity-100 font-bold bg-zinc-300 dark:bg-zinc-900" : "opacity-80"} px-2 py-1 opacity-80 text-sm rounded-md hover:bg-zinc-300 dark:hover:bg-zinc-900 
+              transition`}
             >
               <Link href={link.href} className="flex items-center gap-x-2">
                 <div className={`${link.color} h-4 w-4 rounded-md`}></div>{" "}
