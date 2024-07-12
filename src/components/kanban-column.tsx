@@ -24,6 +24,10 @@ export default function KanbanColumn({ header, textColor, taskList, cardColor }:
           />
           )
         }
+        {
+          taskList.length === 0 && 
+          <p className="italic">No Tasks</p>
+        }
       </div>
     </div>
   )
