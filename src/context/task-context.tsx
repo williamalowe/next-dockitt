@@ -16,10 +16,9 @@ type TaskContextProviderProps = {
 
 type TaskContextType = {
   tasks: Task | any;
-  addTask: () => void;
-  deleteTask: () => void;
-  updateStatus: () => void;
-  // toggleTheme: () => void;
+  addTask: (task: Task) => void;
+  deleteTask: (id: string) => void;
+  updateStatus: (id: string, update: string) => void;
 };
 
 const TaskContext = createContext<TaskContextType | null>(null);
@@ -27,28 +26,41 @@ const TaskContext = createContext<TaskContextType | null>(null);
 export default function TaskContextProvider({
   children,
 }: TaskContextProviderProps) {
-  // const [tasks, setTasks] = useState(() => {
-  //   return JSON.parse(window.localStorage.getItem("tasks") as any) || [];
-  // });
-  const [tasks, setTasks] = useState([
-    {
-      id: "100",
-      task: "Test Task 1",
-      tag: "test",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus architecto voluptas ipsam doloremque non qui quod consequuntur nulla explicabo accusantium?",
-      priority: "low",
-      status: "backlog",
-    },
-  ]);
+
+  let value: any;
+
+  if (typeof window !== "undefined") {
+    value = JSON.parse(localStorage.getItem("tasks") || []);
+  }
+
+
+  const [tasks, setTasks] = useState(value);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  // const [tasks, setTasks] = useState([
+  //   {
+  //     id: "100",
+  //     task: "Test Task 1",
+  //     tag: "test",
+  //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus architecto voluptas ipsam doloremque non qui quod consequuntur nulla explicabo accusantium?",
+  //     priority: "low",
+  //     status: "backlog",
+  //   },
+  // ]);
+
+
 
   const addTask = (newTask: Task) => setTasks([...tasks, newTask]);
 
   const deleteTask = (taskId: string) =>
-    setTasks(tasks.filter((task) => task.id !== taskId));
+    setTasks(tasks.filter((task: Task) => task.id !== taskId));
 
   const updateStatus = (taskID: string, newStatus: string) => {
-    let target = tasks.filter((task) => task.id === taskID);
-    let updatedList = tasks.filter((task) => task.id !== taskID);
+    let target = tasks.filter((task: Task) => task.id === taskID);
+    let updatedList = tasks.filter((task: Task) => task.id !== taskID);
 
     let updatedTask = {
       id: target[0].id,
@@ -60,10 +72,6 @@ export default function TaskContextProvider({
     };
     setTasks([...updatedList, updatedTask]);
   };
-
-  // useEffect(() => {
-  //   localStorage.setItem("tasks", JSON.stringify(tasks));
-  // }, [tasks]);
 
   return (
     <TaskContext.Provider value={{ tasks, addTask, deleteTask, updateStatus }}>
