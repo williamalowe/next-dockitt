@@ -17,6 +17,8 @@ type TaskContextProviderProps = {
 type TaskContextType = {
   tasks: Task | any;
   addTask: () => void;
+  deleteTask: () => void;
+  updateStatus: () => void;
   // toggleTheme: () => void;
 };
 
@@ -41,12 +43,30 @@ export default function TaskContextProvider({
 
   const addTask = (newTask: Task) => setTasks([...tasks, newTask]);
 
+  const deleteTask = (taskId: string) =>
+    setTasks(tasks.filter((task) => task.id !== taskId));
+
+  const updateStatus = (taskID: string, newStatus: string) => {
+    let target = tasks.filter((task) => task.id === taskID);
+    let updatedList = tasks.filter((task) => task.id !== taskID);
+
+    let updatedTask = {
+      date: target[0].id,
+      title: target[0].task,
+      description: target[0].description,
+      priority: target[0].priority,
+      tag: target[0].tag,
+      status: newStatus,
+    };
+    setTasks([...updatedList, updatedTask]);
+  };
+
   // useEffect(() => {
   //   localStorage.setItem("tasks", JSON.stringify(tasks));
   // }, [tasks]);
 
   return (
-    <TaskContext.Provider value={{ tasks, addTask }}>
+    <TaskContext.Provider value={{ tasks, addTask, deleteTask, updateStatus }}>
       {children}
     </TaskContext.Provider>
   );

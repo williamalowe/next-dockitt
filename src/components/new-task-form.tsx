@@ -35,6 +35,7 @@ export default function NewTaskForm() {
         value={task}
         onChange={(e) => setTask(e.target.value)}
         placeholder="Task Title"
+        id="task"
         className="border rounded-md px-1 dark:bg-zinc-800"
       />
       <input
@@ -42,6 +43,7 @@ export default function NewTaskForm() {
         value={tag}
         onChange={(e) => setTag(e.target.value)}
         placeholder="Task Tag"
+        id="tag"
         className="border rounded-md px-1 dark:bg-zinc-800"
       />
       <textarea
