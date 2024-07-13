@@ -14,6 +14,7 @@ export default function KanbanBoard() {
           showCancelled ? "Hide Cancelled Tasks" : "Show Cancelled Tasks"
         } 
       </button>
+      <div className='flex flex-col md:flex-row gap-y-4'>
       <KanbanColumn 
         header="Backlog"
         textColor="text-rose-800"
@@ -47,6 +48,8 @@ export default function KanbanBoard() {
           taskList={tasks.filter((task) => task.status === "cancelled")}
         />
       }
+
+      </div>
     </div>
   )
 }
