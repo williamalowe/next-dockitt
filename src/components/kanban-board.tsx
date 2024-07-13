@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import KanbanColumn from './kanban-column'
 import { useTask } from '@/context/task-context';
+import { BsEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
 
 export default function KanbanBoard() {
   const { tasks } = useTask();
@@ -9,9 +10,10 @@ export default function KanbanBoard() {
 
   return (
     <div className='flex gap-x-2'>
-      <button className='absolute top-4 right-4 p-2 bg-zinc-900 border rounded text-zinc-50 uppercase text-xs hover:scale-105 active:scale-95 transition' onClick={() => setShowCancelled(!showCancelled)}>
+      <button className='absolute top-4 right-4 flex items-center gap-x-2 p-2 bg-zinc-900 border rounded text-zinc-50 uppercase text-xs hover:scale-105 active:scale-95 transition' onClick={() => setShowCancelled(!showCancelled)}>
+        Cancelled 
         {
-          showCancelled ? "Hide Cancelled Tasks" : "Show Cancelled Tasks"
+          showCancelled ? <BsFillEyeSlashFill /> : <BsEyeFill />
         } 
       </button>
       <div className='flex flex-col md:flex-row gap-y-4'>
