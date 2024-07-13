@@ -16,7 +16,7 @@ export default function KanbanBoard() {
           showCancelled ? <BsFillEyeSlashFill /> : <BsEyeFill />
         } 
       </button>
-      <div className='flex flex-col md:flex-row gap-y-4'>
+      <div className='flex-1 flex flex-col md:flex-row gap-y-4'>
       <KanbanColumn 
         header="Backlog"
         textColor="text-rose-800"
