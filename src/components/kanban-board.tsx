@@ -10,7 +10,7 @@ export default function KanbanBoard() {
 
   return (
     <div className='flex gap-x-2'>
-      <button className='absolute top-4 right-4 flex items-center gap-x-2 p-2 bg-zinc-900 border rounded text-zinc-50 uppercase text-xs hover:scale-105 active:scale-95 transition' onClick={() => setShowCancelled(!showCancelled)}>
+      <button className='absolute top-2 right-2 flex items-center gap-x-2 p-1 sm:p-2 bg-zinc-900 border rounded text-zinc-50 uppercase text-xs hover:scale-105 active:scale-95 transition' onClick={() => setShowCancelled(!showCancelled)}>
         Cancelled 
         {
           showCancelled ? <BsFillEyeSlashFill /> : <BsEyeFill />
