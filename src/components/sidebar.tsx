@@ -16,7 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Sidebar() {
   const { tasks } = useTask();
   const pathname = usePathname();
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(false);
 
   const listLinks = [
     {
@@ -82,7 +82,7 @@ export default function Sidebar() {
       <AnimatePresence mode="popLayout">
         {!hidden && (
           <motion.div
-            className="absolute md:static top-0 left-0 z-[999] w-screen md:w-[240px] h-full bg-zinc-100 p-2 rounded-md  flex flex-col gap-y-4 dark: 
+            className="fixed md:static top-0 left-0 z-[999] w-screen md:w-[240px] h-full bg-zinc-100 p-2 rounded-md  flex flex-col gap-y-4 dark: 
       dark:bg-zinc-800"
             initial={{
               opacity: 0,
