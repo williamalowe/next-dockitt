@@ -5,7 +5,7 @@ import { useTask } from "@/context/task-context";
 export default function Tally() {
   const { tasks } = useTask();
   return (
-    <div className="w-full h-full grid grid-cols-3 gap-2">
+    <div className="w-full h-full flex flex-col md:grid grid-cols-3 gap-2">
       <div className="flex border rounded-md overflow-hidden hover:scale-105 transition dark:border-zinc-800">
         <div className="h-full w-4 bg-blue-600"></div>
         <div className="flex-1 flex flex-col items-center justify-center">
@@ -38,7 +38,7 @@ export default function Tally() {
         <div className="h-full w-4 bg-green-600"></div>
         <div className="flex-1 flex flex-col items-center justify-center">
           <h5 className="opacity-60">Completed Tasks</h5>
-          <h3 className="text-4xl font-bold">{tasks.filter((task) => task.status === "competed").length}</h3>
+          <h3 className="text-4xl font-bold">{tasks.filter((task) => task.status === "completed").length}</h3>
         </div>
       </div>
       <div className="flex border rounded-md overflow-hidden hover:scale-105 transition dark:border-zinc-800">
