@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useRef } from "react";
 
 type Task = {
   id: string,
@@ -27,16 +27,22 @@ export default function TaskContextProvider({
   children,
 }: TaskContextProviderProps) {
   const [tasks, setTasks] = useState([]);
+  const initialRender = useRef(true);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || "";
     if (storedTasks) {
       setTasks(storedTasks);
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    if (initialRender.current) {
+      initialRender.current = false;
+      return;
+    }
+    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+    // localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
   // const [tasks, setTasks] = useState([
@@ -52,7 +58,7 @@ export default function TaskContextProvider({
 
 
 
-  const addTask = (newTask: Task) => setTasks([...tasks, newTask]);
+  const addTask = (newTask: Task) => {setTasks([...tasks, newTask])};
 
   const deleteTask = (taskId: string) =>
     setTasks(tasks.filter((task: Task) => task.id !== taskId));
