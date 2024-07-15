@@ -2,12 +2,12 @@
 import { createContext, useContext, useEffect, useState, useRef } from "react";
 
 type Task = {
-  id: string,
-  task: string,
-  tag: string,
-  description: string,
-  priority: string,
-  status: string,
+  id: string;
+  task: string;
+  tag: string;
+  description: string;
+  priority: string;
+  status: string;
 };
 
 type TaskContextProviderProps = {
@@ -34,7 +34,7 @@ export default function TaskContextProvider({
     if (storedTasks) {
       setTasks(storedTasks);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (initialRender.current) {
@@ -42,23 +42,11 @@ export default function TaskContextProvider({
       return;
     }
     window.localStorage.setItem("tasks", JSON.stringify(tasks));
-    // localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  // const [tasks, setTasks] = useState([
-  //   {
-  //     id: "100",
-  //     task: "Test Task 1",
-  //     tag: "test",
-  //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus architecto voluptas ipsam doloremque non qui quod consequuntur nulla explicabo accusantium?",
-  //     priority: "low",
-  //     status: "backlog",
-  //   },
-  // ]);
-
-
-
-  const addTask = (newTask: Task) => {setTasks([...tasks, newTask])};
+  const addTask = (newTask: Task) => {
+    setTasks([...tasks, newTask]);
+  };
 
   const deleteTask = (taskId: string) =>
     setTasks(tasks.filter((task: Task) => task.id !== taskId));
