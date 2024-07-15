@@ -26,15 +26,14 @@ const TaskContext = createContext<TaskContextType | null>(null);
 export default function TaskContextProvider({
   children,
 }: TaskContextProviderProps) {
+  const [tasks, setTasks] = useState([]);
 
-  let value: any;
-
-  if (typeof window !== "undefined") {
-    value = localStorage.getItem("tasks") || [];
-  }
-
-
-  const [tasks, setTasks] = useState(JSON.parse(value));
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if (storedTasks) {
+      setTasks(storedTasks);
+    }
+  }, [])
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
