@@ -1,6 +1,7 @@
 import BarChart from "@/components/bar-chart";
 import DoughnutChart from "@/components/donut-chart";
 import Tally from "@/components/tally";
+import UpdatesDemo from "@/components/updates-demo";
 
 export default function Dashboard() {
   return (
@@ -10,13 +11,15 @@ export default function Dashboard() {
         <div className="rounded-md">
           <Tally />
         </div>
-        <div className="border rounded-md dark:border-zinc-800">
+        <div className="min-h-[200px] border rounded-md dark:border-zinc-800">
           <DoughnutChart />
         </div>
-        <div className="border rounded-md dark:border-zinc-800 flex">
+        <div className="min-h-[200px] border rounded-md dark:border-zinc-800 flex overflow-hidden">
           <BarChart />
         </div>
-        <div className="border rounded-md dark:border-zinc-800"></div>
+        <div className="border rounded-md dark:border-zinc-800">
+          <UpdatesDemo />
+        </div>
       </div>
     </main>
   )

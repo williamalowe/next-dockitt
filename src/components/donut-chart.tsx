@@ -33,7 +33,7 @@ const DoughnutChart = () => {
   };
 
   return (
-    <div className="w-full h-full">
+    <div className="">
       <Doughnut 
         data={data}
         width={"100%"}

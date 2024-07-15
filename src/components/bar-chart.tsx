@@ -66,7 +66,7 @@ const BarChart = () => {
     ],
   };
   return (
-    <div className="flex-1 flex items-center justify-center">
+    <div className="flex-1 flex items-center justify-center ">
       <Bar options={options} data={data} />
     </div>
   );
