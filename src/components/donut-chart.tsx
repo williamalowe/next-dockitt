@@ -21,10 +21,10 @@ const DoughnutChart = () => {
           tasks.filter((task) => task.status === "completed").length,
         ],
         backgroundColor: [
-          '#e11d48',
-          '#ea580c',
-          '#9333ea',
-          '#16a34a'
+          '#e11d489a',
+          '#ea580c9a',
+          '#9333ea9a',
+          '#16a34a9a'
         ],
         borderWidth: 0,
         hoverOffset: 10

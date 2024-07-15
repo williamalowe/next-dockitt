@@ -1,3 +1,4 @@
+import BarChart from "@/components/bar-chart";
 import DoughnutChart from "@/components/donut-chart";
 import Tally from "@/components/tally";
 
@@ -12,7 +13,9 @@ export default function Dashboard() {
         <div className="border rounded-md dark:border-zinc-800">
           <DoughnutChart />
         </div>
-        <div className="border rounded-md dark:border-zinc-800"></div>
+        <div className="border rounded-md dark:border-zinc-800 flex">
+          <BarChart />
+        </div>
         <div className="border rounded-md dark:border-zinc-800"></div>
       </div>
     </main>
