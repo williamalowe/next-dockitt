@@ -35,7 +35,7 @@ export default function Sidebar() {
       icon: <BsGraphDown />,
     },
     {
-      href: "/new-task",
+      href: `/new-task`,
       title: "Add Task",
       icon: <BsPlus />,
     },
