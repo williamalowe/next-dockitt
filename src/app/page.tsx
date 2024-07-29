@@ -1,7 +1,5 @@
 "use client"
 import TaskList from "@/components/task-list";
-import Link from "next/link";
-import { BsPlus } from "react-icons/bs";
 import { useTask } from "@/context/task-context";
 import NewTaskDropdown from "@/components/new-task-dropdown";
 
