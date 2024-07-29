@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsDashLg, BsPlus } from "react-icons/bs";
 import NewTaskForm from "./new-task-form";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTask } from "@/context/task-context";
 
 export default function NewTaskDropdown({ status }: { status: string }) {
   const [showForm, setShowForm] = useState(false);
+  const { tasks } = useTask();
+
+  useEffect(() => {
+    setShowForm(false);
+  }, [tasks]);
+
   return (
     <>
       <button
@@ -20,15 +27,15 @@ export default function NewTaskDropdown({ status }: { status: string }) {
           <motion.div
             initial={{
               opacity: 0,
-              y: -16
+              y: -16,
             }}
             animate={{
               opacity: 1,
-              y: 0
+              y: 0,
             }}
             exit={{
               opacity: 0,
-              y: -16
+              y: -16,
             }}
           >
             <NewTaskForm taskStatus={status} />
