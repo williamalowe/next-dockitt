@@ -18,7 +18,7 @@ export default function KanbanCard({
   status: string;
 }) {
   return (
-    <div className="border border-zinc-200 rounded-md flex overflow-hidden max-h-36 dark:border-zinc-600 hover:translate-x-2 transition">
+    <div className="border border-zinc-200 rounded-md flex overflow-hidden max-h-36 dark:border-zinc-600 hover:-rotate-1 transition">
       <div className={`${color} w-1`}></div>
       <div className="relative flex-1 p-2 flex flex-col gap-y-1">
         <h3 className="font-bold">{task}</h3>
