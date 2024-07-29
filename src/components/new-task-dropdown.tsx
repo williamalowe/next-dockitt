@@ -5,7 +5,7 @@ import { BsDashLg, BsPlus } from "react-icons/bs";
 import NewTaskForm from "./new-task-form";
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function NewTaskDropdown() {
+export default function NewTaskDropdown({ status }: { status: string }) {
   const [showForm, setShowForm] = useState(false);
   return (
     <>
@@ -17,8 +17,21 @@ export default function NewTaskDropdown() {
       </button>
       <AnimatePresence>
         {showForm && (
-          <motion.div>
-            <NewTaskForm taskStatus="" />
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -16
+            }}
+            animate={{
+              opacity: 1,
+              y: 0
+            }}
+            exit={{
+              opacity: 0,
+              y: -16
+            }}
+          >
+            <NewTaskForm taskStatus={status} />
           </motion.div>
         )}
       </AnimatePresence>
