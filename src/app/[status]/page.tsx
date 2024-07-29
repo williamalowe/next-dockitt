@@ -35,7 +35,15 @@ export default function Status({
         <BsPlus />
       </Link> */}
       {params.status !== "cancelled" && (
-        <NewTaskDropdown status={params.status} />
+        <NewTaskDropdown
+          status={
+            params.status === "in-progress"
+              ? "in progress"
+              : params.status === "under-review"
+              ? "under review"
+              : params.status
+          }
+        />
       )}
     </main>
   );
