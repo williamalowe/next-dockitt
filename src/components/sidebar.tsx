@@ -34,11 +34,11 @@ export default function Sidebar() {
       title: "Dashboard",
       icon: <BsGraphDown />,
     },
-    {
-      href: `/new-task`,
-      title: "Add Task",
-      icon: <BsPlus />,
-    },
+    // {
+    //   href: `/new-task`,
+    //   title: "Add Task",
+    //   icon: <BsPlus />,
+    // },
   ];
   const taskLists = [
     {
