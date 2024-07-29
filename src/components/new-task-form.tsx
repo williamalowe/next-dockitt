@@ -1,7 +1,7 @@
 "use client";
 
 import { useTask } from "@/context/task-context";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BsPlus } from "react-icons/bs";
 
@@ -14,7 +14,7 @@ export default function NewTaskForm({ taskStatus } : {
   const [priority, setPriority] = useState("low");
   const [status, setStatus] = useState(!taskStatus ? "backlog" : taskStatus);
   const [invalidPost, setInvalidPost] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
 
   const { addTask } = useTask();
   const resetFields = () => {
@@ -43,7 +43,7 @@ export default function NewTaskForm({ taskStatus } : {
     } else {
       addTask(newTask);
       resetFields();
-      router.push("/");
+      // router.push("/");
     }
   };
 
