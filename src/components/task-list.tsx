@@ -1,4 +1,3 @@
-import { BsCaretLeft, BsCaretRight, BsX } from "react-icons/bs";
 import TaskUpdateButtons from "./task-update-btns";
 
 export default function TaskList({ tasks }: { tasks: any }) {
