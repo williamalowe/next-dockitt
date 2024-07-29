@@ -5,7 +5,6 @@ import {
   BsGrid,
   BsKanban,
   BsListCheck,
-  BsPlus,
   BsX,
 } from "react-icons/bs";
 import { useTask } from "@/context/task-context";
