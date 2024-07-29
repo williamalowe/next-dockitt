@@ -3,6 +3,7 @@ import TaskList from "@/components/task-list";
 import Link from "next/link";
 import { BsPlus } from "react-icons/bs";
 import { useTask } from "@/context/task-context";
+import NewTaskDropdown from "@/components/new-task-dropdown";
 
 export default function Home() {
   const { tasks } = useTask();
@@ -13,7 +14,8 @@ export default function Home() {
       <TaskList 
         tasks={tasks}
       />
-      <Link href="/new-task" className="flex items-center justify-center bg-zinc-900 text-zinc-50/80 p-1 text-xl rounded-md dark:bg-zinc-200 dark:text-zinc-900/80 hover:scale-[1.025] transition"><BsPlus /></Link>
+      {/* <Link href="/new-task" className="flex items-center justify-center bg-zinc-900 text-zinc-50/80 p-1 text-xl rounded-md dark:bg-zinc-200 dark:text-zinc-900/80 hover:scale-[1.025] transition"><BsPlus /></Link> */}
+      <NewTaskDropdown />
     </main>
   );
 }

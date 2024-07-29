@@ -5,12 +5,14 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BsPlus } from "react-icons/bs";
 
-export default function NewTaskForm() {
+export default function NewTaskForm({ taskStatus } : {
+  taskStatus: string
+}) {
   const [task, setTask] = useState("");
   const [tag, setTag] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("low");
-  const [status, setStatus] = useState("backlog");
+  const [status, setStatus] = useState(!taskStatus ? "backlog" : taskStatus);
   const [invalidPost, setInvalidPost] = useState(false);
   const router = useRouter();
 
@@ -20,12 +22,14 @@ export default function NewTaskForm() {
     setTag("");
     setDescription("");
     setPriority("");
-    setPriority("");
     setStatus("");
     setInvalidPost(false);
   }
 
   const handleSubmit = () => {
+    if (taskStatus) {
+      setStatus(taskStatus);
+    }
     const newTask = {
       id: Date.now(),
       task: task,
@@ -88,20 +92,23 @@ export default function NewTaskForm() {
           <option value="critical">Critical</option>
         </select>
       </div>
-      <div>
-        <label htmlFor="status">Status: </label>
-        <select
-          name="status"
-          id="status"
-          onChange={(e) => setStatus(e.target.value)}
-          className="rounded-md bg-white dark:bg-zinc-800"
-        >
-          <option value="backlog">Backlog</option>
-          <option value="in progress">In Progress</option>
-          <option value="under review">Under Review</option>
-          <option value="completed">Completed</option>
-        </select>
-      </div>
+      {
+        !taskStatus &&
+        <div>
+          <label htmlFor="status">Status: </label>
+          <select
+            name="status"
+            id="status"
+            onChange={(e) => setStatus(e.target.value)}
+            className="rounded-md bg-white dark:bg-zinc-800"
+          >
+            <option value="backlog">Backlog</option>
+            <option value="in progress">In Progress</option>
+            <option value="under review">Under Review</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      }
       <button
         onClick={handleSubmit}
         className="flex items-center justify-center bg-zinc-900 text-zinc-50/80 p-1 text-sm rounded-md dark:bg-zinc-200 dark:text-zinc-900/80 hover:scale-[1.025] transition"
