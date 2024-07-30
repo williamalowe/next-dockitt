@@ -56,7 +56,7 @@ export const exampleTasks = [
     status: "cancelled",
   },
   {
-    id: "009",
+    id: "008",
     task: "Resolve sidebar sizing issue.",
     tag: "bug",
     description: "Sidebar incorrectly resizing on sm resolutions.",
