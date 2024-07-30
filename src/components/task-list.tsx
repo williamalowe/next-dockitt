@@ -1,4 +1,3 @@
-import AddTestDataBtn from "./add-test-data-btn";
 import TaskUpdateButtons from "./task-update-btns";
 
 export default function TaskList({ tasks }: { tasks: any }) {
@@ -39,7 +38,6 @@ export default function TaskList({ tasks }: { tasks: any }) {
         {tasks.length === 0 && (
           <>
             <p className="text-center font-bold">No Tasks Remaining!</p>
-            <AddTestDataBtn />
           </>
         )}
       </div>
@@ -73,10 +71,7 @@ export default function TaskList({ tasks }: { tasks: any }) {
           </div>
         ))}
         {tasks.length === 0 && (
-          <>
-            <p className="text-center font-bold">No Tasks Remaining!</p>
-            <AddTestDataBtn />
-          </>
+          <p className="text-center font-bold">No Tasks Remaining!</p>
         )}
       </div>
     </>

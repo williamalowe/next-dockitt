@@ -8,7 +8,7 @@ export default function AddTestDataBtn() {
   return (
     <button 
       onClick={addTestTasks}
-      className="w-fit p-1 bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 rounded-md text-sm font-bold"
+      className="w-fit p-1 bg-zinc-900 dark:bg-zinc-100 text-zinc-50 dark:text-zinc-900 rounded-md text-sm font-bold"
     >
       Load Example Data
     </button>

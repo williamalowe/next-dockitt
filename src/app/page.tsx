@@ -2,6 +2,7 @@
 import TaskList from "@/components/task-list";
 import { useTask } from "@/context/task-context";
 import NewTaskDropdown from "@/components/new-task-dropdown";
+import AddTestDataBtn from "@/components/add-test-data-btn";
 
 export default function Home() {
   const { tasks } = useTask();
@@ -15,6 +16,10 @@ export default function Home() {
       <NewTaskDropdown 
         status=""
       />
+      {
+        tasks.length === 0 &&
+        <AddTestDataBtn />
+      }
     </main>
   );
 }
