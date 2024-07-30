@@ -15,7 +15,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Sidebar() {
   const { tasks } = useTask();
   const pathname = usePathname();
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   const listLinks = [
     {
