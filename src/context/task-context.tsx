@@ -2,7 +2,7 @@
 import { createContext, useContext, useEffect, useState, useRef } from "react";
 
 type Task = {
-  id: string;
+  id: number;
   task: string;
   tag: string;
   description: string;
@@ -17,8 +17,8 @@ type TaskContextProviderProps = {
 type TaskContextType = {
   tasks: Task | any;
   addTask: (task: Task) => void;
-  deleteTask: (id: string) => void;
-  updateStatus: (id: string, update: string) => void;
+  deleteTask: (id: number) => void;
+  updateStatus: (id: number, update: string) => void;
 };
 
 const TaskContext = createContext<TaskContextType | null>(null);
@@ -48,10 +48,10 @@ export default function TaskContextProvider({
     setTasks([...tasks, newTask]);
   };
 
-  const deleteTask = (taskId: string) =>
+  const deleteTask = (taskId: number) =>
     setTasks(tasks.filter((task: Task) => task.id !== taskId));
 
-  const updateStatus = (taskID: string, newStatus: string) => {
+  const updateStatus = (taskID: number, newStatus: string) => {
     let target = tasks.filter((task: Task) => task.id === taskID);
     let updatedList = tasks.filter((task: Task) => task.id !== taskID);
 
