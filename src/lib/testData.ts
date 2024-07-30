@@ -24,6 +24,14 @@ export const exampleTasks = [
     status: "in progress",
   },
   {
+    id: "004",
+    task: "Refactor new-task-form",
+    tag: "refactor",
+    description: "Refactor new-task-form for resusability, and as a dropdown form",
+    priority: "medium",
+    status: "backlog",
+  },
+  {
     id: "005",
     task: "Implement mobile support",
     tag: "styles",
@@ -48,7 +56,7 @@ export const exampleTasks = [
     status: "cancelled",
   },
   {
-    id: "008",
+    id: "009",
     task: "Resolve sidebar sizing issue.",
     tag: "bug",
     description: "Sidebar incorrectly resizing on sm resolutions.",
