@@ -17,7 +17,7 @@ export default function NewTaskDropdown({ status }: { status: string }) {
   return (
     <div className="w-full flex flex-col gap-y-4 pb-2">
       <button
-        className="flex items-center justify-center bg-zinc-900 text-zinc-50/80 p-1 text-xl rounded-md dark:bg-zinc-200 dark:text-zinc-900/80 hover:scale-[1.025] transition"
+        className="flex items-center justify-center bg-zinc-900 text-zinc-50/80 p-1 text-xl rounded-md dark:bg-zinc-200 dark:text-zinc-900/80 hover:opacity-80 transition"
         onClick={() => setShowForm(!showForm)}
       >
         {showForm ? <BsDashLg /> : <BsPlus />}
