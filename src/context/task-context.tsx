@@ -1,4 +1,5 @@
 "use client";
+import { exampleTasks } from "@/lib/testData";
 import { createContext, useContext, useEffect, useState, useRef } from "react";
 
 type Task = {
@@ -19,6 +20,7 @@ type TaskContextType = {
   addTask: (task: Task) => void;
   deleteTask: (id: number) => void;
   updateStatus: (id: number, update: string) => void;
+  addTestTasks: () => void;
 };
 
 const TaskContext = createContext<TaskContextType | null>(null);
@@ -66,8 +68,13 @@ export default function TaskContextProvider({
     setTasks([...updatedList, updatedTask]);
   };
 
+  const addTestTasks = () => {
+    setTasks(exampleTasks);
+  }
+
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask, deleteTask, updateStatus }}>
+    <TaskContext.Provider value={{ tasks, addTask, deleteTask, updateStatus, addTestTasks }}>
       {children}
     </TaskContext.Provider>
   );

@@ -1,14 +1,13 @@
 "use client"
 
 import { useTask } from "@/context/task-context";
-import { exampleTasks } from "@/lib/testData";
 
 export default function AddTestDataBtn() {
-  const { addTask } = useTask();
+  const { addTestTasks } = useTask();
 
   return (
-    <button>
-      
+    <button onClick={addTestTasks}>
+      test
     </button>
   )
 }
