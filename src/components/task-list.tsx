@@ -10,7 +10,7 @@ export default function TaskList({ tasks }: { tasks: any }) {
           <div className="w-32 uppercase font-bold">Status</div>
           <div className="flex-1"></div>
         </div>
-        {tasks.map((task) => (
+        {tasks.map((task: any) => (
           <div
             key={task.id}
             className="flex hover:bg-zinc-200 px-2 py-1 rounded-md dark:hover:bg-zinc-800 transition"
@@ -43,7 +43,7 @@ export default function TaskList({ tasks }: { tasks: any }) {
       </div>
       <div className="flex md:hidden flex-col border border-zinc-900/20 w-full rounded-md p-2 gap-y-1 dark:border-zinc-50/20">
         <div className="uppercase font-bold">Tasks List</div>
-        {tasks.map((task) => (
+        {tasks.map((task: any) => (
           <div
             key={task.id}
             className="flex flex-col hover:bg-zinc-200 px-2 py-1 rounded-md dark:hover:bg-zinc-800 transition"

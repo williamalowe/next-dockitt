@@ -18,7 +18,7 @@ export default function KanbanColumn({
         {header} - {taskList.length}
       </h5>
       <div className="flex p-1 gap-2 md:flex-col flex-wrap">
-        {taskList.map((task) => (
+        {taskList.map((task: any) => (
           <KanbanCard
             key={task.id}
             color={cardColor}

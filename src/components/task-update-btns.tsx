@@ -14,7 +14,7 @@ export default function TaskUpdateButtons({
   id,
 }: {
   status: string;
-  id: string;
+  id: number;
 }) {
   const { updateStatus, deleteTask } = useTask();
   return (

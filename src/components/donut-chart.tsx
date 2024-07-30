@@ -15,10 +15,10 @@ const DoughnutChart = () => {
       {
         label: '# of Tasks',
         data: [
-          tasks.filter((task) => task.status === 'backlog').length,
-          tasks.filter((task) => task.status === 'in progress').length,
-          tasks.filter((task) => task.status === 'under review').length,
-          tasks.filter((task) => task.status === "completed").length,
+          tasks.filter((task: any) => task.status === 'backlog').length,
+          tasks.filter((task: any) => task.status === 'in progress').length,
+          tasks.filter((task: any) => task.status === 'under review').length,
+          tasks.filter((task: any) => task.status === "completed").length,
         ],
         backgroundColor: [
           '#e11d489a',
