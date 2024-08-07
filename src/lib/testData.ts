@@ -1,6 +1,6 @@
 export const exampleTasks = [
   {
-    id: "001",
+    id: 1,
     task: "Implement lightmode/darkmode",
     tag: "feat",
     description: "Implement lightmode/darkmode toggle + switch component.",
@@ -8,7 +8,7 @@ export const exampleTasks = [
     status: "completed",
   },
   {
-    id: "002",
+    id: 2,
     task: "Resolve new-task-form overflow issue",
     tag: "fix",
     description: "new-task-from component currently overflows on x-axis on sm resolutions.",
@@ -16,7 +16,7 @@ export const exampleTasks = [
     status: "under review",
   },
   {
-    id: "003",
+    id: 3,
     task: "Implement demo data",
     tag: "test",
     description: "Implement test data to be loaded if no tasks are in storage",
@@ -24,7 +24,7 @@ export const exampleTasks = [
     status: "in progress",
   },
   {
-    id: "004",
+    id: 4,
     task: "Refactor new-task-form",
     tag: "refactor",
     description: "Refactor new-task-form for resusability, and as a dropdown form",
@@ -32,7 +32,7 @@ export const exampleTasks = [
     status: "backlog",
   },
   {
-    id: "005",
+    id: 5,
     task: "Implement mobile support",
     tag: "styles",
     description: "Ensure that application has appropriate stylings to support sm resolutions.",
@@ -40,7 +40,7 @@ export const exampleTasks = [
     status: "completed",
   },
   {
-    id: "006",
+    id: "6,
     task: "Investigate drag-drop implementation",
     tag: "docs",
     description: "Generate spike doc regarding feasibility for beautiful-dnd library implementation.",
@@ -48,7 +48,7 @@ export const exampleTasks = [
     status: "backlog",
   },
   {
-    id: "007",
+    id: 7,
     task: "Adjust darkmode color-scheme",
     tag: "style",
     description: "Adjust darkmode colors to enhance usability and component clarity.",
@@ -56,7 +56,7 @@ export const exampleTasks = [
     status: "cancelled",
   },
   {
-    id: "008",
+    id: 8,
     task: "Resolve sidebar sizing issue.",
     tag: "bug",
     description: "Sidebar incorrectly resizing on sm resolutions.",
