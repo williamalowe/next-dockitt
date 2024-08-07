@@ -35,6 +35,8 @@ export default function TaskContextProvider({
     const storedTasks = JSON.parse(localStorage.getItem("tasks") || '{}');
     if (storedTasks) {
       setTasks(storedTasks);
+    } else {
+      addTestTasks();
     }
   }, []);
 
