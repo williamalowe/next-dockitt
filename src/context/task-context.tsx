@@ -51,11 +51,11 @@ export default function TaskContextProvider({
   };
 
   const deleteTask = (taskId: number) =>
-    setTasks(tasks.filter((task: Task) => task.id !== taskId) || "");
+    setTasks(tasks.filter((task: Task) => task.id !== taskId) || []);
 
   const updateStatus = (taskID: number, newStatus: string) => {
     let target = tasks.filter((task: Task) => task.id === taskID) || "";
-    let updatedList = tasks.filter((task: Task) => task.id !== taskID) || "";
+    let updatedList = tasks.filter((task: Task) => task.id !== taskID) || [];
 
     let updatedTask = {
       id: target[0].id,

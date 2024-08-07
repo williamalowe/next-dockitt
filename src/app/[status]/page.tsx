@@ -11,7 +11,7 @@ export default function Status({
   };
 }) {
   const { tasks } = useTask();
-  let displayTasks = tasks.filter((task: any) => task.status === params.status) || "";
+  let displayTasks = tasks.filter((task: any) => task.status === params.status) || [];
 
   if (params.status === "in-progress") {
     displayTasks = tasks.filter((task: any) => task.status === "in progress") || "";
