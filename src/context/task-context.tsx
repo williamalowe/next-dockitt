@@ -38,7 +38,7 @@ export default function TaskContextProvider({
     description: "Implement lightmode/darkmode toggle + switch component.",
     priority: "high",
     status: "completed",}`);
-    if (storedTasks !== "") {
+    if (storedTasks) {
       setTasks(storedTasks);
     }
   }, []);
