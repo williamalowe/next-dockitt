@@ -10,7 +10,7 @@ export default function KanbanCard({
   status,
 }: {
   color: string;
-  id: string;
+  id: number;
   task: string;
   tag: string;
   description: string;
