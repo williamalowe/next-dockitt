@@ -32,7 +32,12 @@ export default function TaskContextProvider({
   const initialRender = useRef(true);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks") || "{}");
+    const storedTasks = JSON.parse(localStorage.getItem("tasks") || `{id: 1,
+    task: "Implement lightmode/darkmode",
+    tag: "feat",
+    description: "Implement lightmode/darkmode toggle + switch component.",
+    priority: "high",
+    status: "completed",}`);
     if (storedTasks !== "") {
       setTasks(storedTasks);
     }
