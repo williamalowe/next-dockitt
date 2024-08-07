@@ -79,4 +79,4 @@ export const exampleTasks = [
     priority: "medium",
     status: "in progress",
   },
-] as const;
+];

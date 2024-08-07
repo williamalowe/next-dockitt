@@ -28,11 +28,11 @@ const TaskContext = createContext<TaskContextType | null>(null);
 export default function TaskContextProvider({
   children,
 }: TaskContextProviderProps) {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([] as Task[]);
   const initialRender = useRef(true);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const storedTasks = JSON.parse(localStorage.getItem('tasks') || "");
     if (storedTasks) {
       setTasks(storedTasks);
     }
