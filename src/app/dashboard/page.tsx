@@ -1,12 +1,12 @@
-import BarChart from "@/components/bar-chart";
-import DoughnutChart from "@/components/donut-chart";
-import Tally from "@/components/tally";
-import UpdatesDemo from "@/components/updates-demo";
+// import BarChart from "@/components/bar-chart";
+// import DoughnutChart from "@/components/donut-chart";
+// import Tally from "@/components/tally";
+// import UpdatesDemo from "@/components/updates-demo";
 
 export default function Dashboard() {
   return (
     <main className="flex-1 py-8 flex flex-col gap-y-4">
-      <h1 className="text-2xl font-bold">Dashboard</h1>
+      {/* <h1 className="text-2xl font-bold">Dashboard</h1>
       <div className="flex-1 px-2 flex flex-col md:grid grid-cols-2 grid-rows-2 gap-2">
         <div className="rounded-md">
           <Tally />
@@ -20,7 +20,8 @@ export default function Dashboard() {
         <div className="border rounded-md dark:border-zinc-800">
           <UpdatesDemo />
         </div>
-      </div>
+      </div> */}
+      <p className="text-center">Component Pending Review - Coming Soon</p>
     </main>
   )
 }
