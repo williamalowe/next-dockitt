@@ -32,8 +32,8 @@ export default function TaskContextProvider({
   const initialRender = useRef(true);
 
   useEffect(() => {
-    let storedTasks = []
-      storedTasks = JSON.parse(localStorage.getItem("tasks") || '{}');
+    const storedTasks = JSON.parse(localStorage.getItem("tasks") || "{}");
+    console.log(storedTasks.length)
     if (storedTasks.length !== 0) {
       setTasks(storedTasks);
     } else {
