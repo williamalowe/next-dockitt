@@ -32,8 +32,9 @@ export default function TaskContextProvider({
   const initialRender = useRef(true);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks') || "");
-    if (storedTasks) {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks") || "");
+    console.log(storedTasks);
+    if (storedTasks !== "") {
       setTasks(storedTasks);
     }
   }, []);
@@ -70,11 +71,12 @@ export default function TaskContextProvider({
 
   const addTestTasks = () => {
     setTasks(exampleTasks);
-  }
-
+  };
 
   return (
-    <TaskContext.Provider value={{ tasks, addTask, deleteTask, updateStatus, addTestTasks }}>
+    <TaskContext.Provider
+      value={{ tasks, addTask, deleteTask, updateStatus, addTestTasks }}
+    >
       {children}
     </TaskContext.Provider>
   );
