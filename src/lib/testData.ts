@@ -40,7 +40,7 @@ export const exampleTasks = [
     status: "completed",
   },
   {
-    id: "6,
+    id: 6,
     task: "Investigate drag-drop implementation",
     tag: "docs",
     description: "Generate spike doc regarding feasibility for beautiful-dnd library implementation.",
@@ -64,7 +64,7 @@ export const exampleTasks = [
     status: "completed",
   },
   {
-    id: "009",
+    id: 9,
     task: "Implement dashboard graph components",
     tag: "feat",
     description: "Investigate and implement graph libraries appropriate for general dashboard overview.",
@@ -72,7 +72,7 @@ export const exampleTasks = [
     status: "under review",
   },
   {
-    id: "010",
+    id: 10,
     task: "Test task-context functions across all elements",
     tag: "test",
     description: "Ensure that task-contect functions are working as intended across all routes + componenets.",
