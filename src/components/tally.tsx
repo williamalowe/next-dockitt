@@ -17,35 +17,35 @@ export default function Tally() {
         <div className="h-full w-4 bg-rose-600"></div>
         <div className="flex-1 flex flex-col items-center justify-center">
           <h5 className="opacity-60 text-center">Backlog Tasks</h5>
-          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "backlog").length || 0}</h3>
+          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "backlog").length}</h3>
         </div>
       </div>
       <div className="flex border rounded-md overflow-hidden hover:scale-105 transition dark:border-zinc-800">
         <div className="h-full w-4 bg-orange-600"></div>
         <div className="flex-1 flex flex-col items-center justify-center">
           <h5 className="opacity-60 text-center">In Progress Tasks</h5>
-          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "in progress").length || 0}</h3>
+          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "in progress").length}</h3>
         </div>
       </div>
       <div className="flex border rounded-md overflow-hidden hover:scale-105 transition dark:border-zinc-800">
         <div className="h-full w-4 bg-purple-600"></div>
         <div className="flex-1 flex flex-col items-center justify-center">
           <h5 className="opacity-60 text-center">Under Review Tasks</h5>
-          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "under review").length || 0}</h3>
+          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "under review").length}</h3>
         </div>
       </div>
       <div className="flex border rounded-md overflow-hidden hover:scale-105 transition dark:border-zinc-800">
         <div className="h-full w-4 bg-green-600"></div>
         <div className="flex-1 flex flex-col items-center justify-center">
           <h5 className="opacity-60 text-center">Completed Tasks</h5>
-          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "completed").length || 0}</h3>
+          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "completed").length}</h3>
         </div>
       </div>
       <div className="flex border rounded-md overflow-hidden hover:scale-105 transition dark:border-zinc-800">
         <div className="h-full w-4 bg-red-600"></div>
         <div className="flex-1 flex flex-col items-center justify-center">
           <h5 className="opacity-60 text-center">Cancelled Tasks</h5>
-          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "cancelled").length || 0}</h3>
+          <h3 className="text-4xl font-bold">{tasks.filter((task: any) => task.status === "cancelled").length}</h3>
         </div>
       </div>
     </div>

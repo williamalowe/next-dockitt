@@ -11,13 +11,13 @@ export default function Status({
   };
 }) {
   const { tasks } = useTask();
-  let displayTasks = tasks.filter((task: any) => task.status === params.status) || [];
+  let displayTasks = tasks.filter((task: any) => task.status === params.status);
 
   if (params.status === "in-progress") {
-    displayTasks = tasks.filter((task: any) => task.status === "in progress") || "";
+    displayTasks = tasks.filter((task: any) => task.status === "in progress");
   }
   if (params.status === "under-review") {
-    displayTasks = tasks.filter((task: any) => task.status === "under review") || "";
+    displayTasks = tasks.filter((task: any) => task.status === "under review");
   }
 
   return (
